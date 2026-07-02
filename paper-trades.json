@@ -1,0 +1,642 @@
+{
+  "balance": 9416.279832237702,
+  "trades": [
+    {
+      "id": "1782936084896",
+      "symbol": "BTCUSDT",
+      "type": "LONG",
+      "entryPrice": 59987,
+      "quantity": 0.003334055712070949,
+      "positionSize": 200,
+      "stopLoss": 59633.973040000004,
+      "takeProfit": 60536.55,
+      "entryTime": "2026-07-01T20:01:24.896Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        }
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "1782988274437",
+      "symbol": "ADAUSDT",
+      "type": "LONG",
+      "entryPrice": 0.1586,
+      "quantity": 1261.5221738564585,
+      "positionSize": 200.0774167736343,
+      "stopLoss": 0.1559874,
+      "takeProfit": 0.1629,
+      "entryTime": "2026-07-02T10:31:14.437Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BULLISH",
+          "reason": "Bid/Ask ratio 1.20 - More buyers"
+        }
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "1783006559674",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1703.05,
+      "quantity": 0.11513218545442683,
+      "positionSize": 196.0758684381616,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:35:59.674Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.37 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.26 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1698.9,
+      "exitTime": "2026-07-02T15:37:02.064Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.47779856963585565,
+      "pnlPercent": 0.243680455653085
+    },
+    {
+      "id": "1783006860071",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1702.61,
+      "quantity": 0.11516755123578173,
+      "positionSize": 196.08542440955432,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:41:00.071Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.30 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.36 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1701.61,
+      "exitTime": "2026-07-02T15:42:00.046Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.11516755123578173,
+      "pnlPercent": 0.058733356435120204
+    },
+    {
+      "id": "1783007099941",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1702.07,
+      "quantity": 0.11520544264370976,
+      "positionSize": 196.08772776057907,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:44:59.941Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.20 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.68 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1701.78,
+      "exitTime": "2026-07-02T15:47:00.220Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.03340957836667164,
+      "pnlPercent": 0.01703807716486182
+    },
+    {
+      "id": "1783007279848",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1702.23,
+      "quantity": 0.11519500652211885,
+      "positionSize": 196.08839595214639,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:47:59.848Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.23 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.56 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1701.19,
+      "exitTime": "2026-07-02T15:49:00.619Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.11980280678299941,
+      "pnlPercent": 0.06109632658336204
+    },
+    {
+      "id": "1783026305765",
+      "symbol": "OPUSDT",
+      "type": "LONG",
+      "entryPrice": 0.0984,
+      "quantity": 1992.7926017101834,
+      "positionSize": 196.09079200828205,
+      "stopLoss": 0.0975046,
+      "takeProfit": 0.101,
+      "entryTime": "2026-07-02T21:05:05.765Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "weight": 2,
+          "reason": "Uptrend confirmed"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "weight": 1,
+          "reason": "Positive momentum"
+        }
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "1783026306244",
+      "symbol": "PEPEUSDT",
+      "type": "LONG",
+      "entryPrice": 0.00000244,
+      "quantity": 78757777.11808048,
+      "positionSize": 192.1689761681164,
+      "stopLoss": 0.00000241516,
+      "takeProfit": 0.0000025,
+      "entryTime": "2026-07-02T21:05:06.244Z",
+      "confidence": "HIGH",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "weight": 2,
+          "reason": "Uptrend confirmed"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "weight": 1,
+          "reason": "Positive momentum"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BULLISH",
+          "weight": 1.5,
+          "reason": "Bid/Ask 2.03"
+        },
+        {
+          "indicator": "CVD",
+          "signal": "BULLISH",
+          "weight": 2,
+          "reason": "Strong buy pressure"
+        }
+      ],
+      "status": "OPEN"
+    }
+  ],
+  "openPositions": [
+    {
+      "id": "1782988274437",
+      "symbol": "ADAUSDT",
+      "type": "LONG",
+      "entryPrice": 0.1586,
+      "quantity": 1261.5221738564585,
+      "positionSize": 200.0774167736343,
+      "stopLoss": 0.1559874,
+      "takeProfit": 0.1629,
+      "entryTime": "2026-07-02T10:31:14.437Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BULLISH",
+          "reason": "Bid/Ask ratio 1.20 - More buyers"
+        }
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "1783026305765",
+      "symbol": "OPUSDT",
+      "type": "LONG",
+      "entryPrice": 0.0984,
+      "quantity": 1992.7926017101834,
+      "positionSize": 196.09079200828205,
+      "stopLoss": 0.0975046,
+      "takeProfit": 0.101,
+      "entryTime": "2026-07-02T21:05:05.765Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "weight": 2,
+          "reason": "Uptrend confirmed"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "weight": 1,
+          "reason": "Positive momentum"
+        }
+      ],
+      "status": "OPEN"
+    },
+    {
+      "id": "1783026306244",
+      "symbol": "PEPEUSDT",
+      "type": "LONG",
+      "entryPrice": 0.00000244,
+      "quantity": 78757777.11808048,
+      "positionSize": 192.1689761681164,
+      "stopLoss": 0.00000241516,
+      "takeProfit": 0.0000025,
+      "entryTime": "2026-07-02T21:05:06.244Z",
+      "confidence": "HIGH",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "weight": 2,
+          "reason": "Uptrend confirmed"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "weight": 1,
+          "reason": "Positive momentum"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BULLISH",
+          "weight": 1.5,
+          "reason": "Bid/Ask 2.03"
+        },
+        {
+          "indicator": "CVD",
+          "signal": "BULLISH",
+          "weight": 2,
+          "reason": "Strong buy pressure"
+        }
+      ],
+      "status": "OPEN"
+    }
+  ],
+  "closedTrades": [
+    {
+      "id": "1782936084896",
+      "symbol": "BTCUSDT",
+      "type": "LONG",
+      "entryPrice": 59987,
+      "quantity": 0.003334055712070949,
+      "positionSize": 200,
+      "stopLoss": 59633.973040000004,
+      "takeProfit": 60536.55,
+      "entryTime": "2026-07-01T20:01:24.896Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 61148,
+      "exitTime": "2026-07-02T10:17:12.784Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 3.8708386817143716,
+      "pnlPercent": 1.9354193408571858
+    },
+    {
+      "id": "1783006559674",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1703.05,
+      "quantity": 0.11513218545442683,
+      "positionSize": 196.0758684381616,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:35:59.674Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.37 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.26 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1698.9,
+      "exitTime": "2026-07-02T15:37:02.064Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.47779856963585565,
+      "pnlPercent": 0.243680455653085
+    },
+    {
+      "id": "1783006860071",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1702.61,
+      "quantity": 0.11516755123578173,
+      "positionSize": 196.08542440955432,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:41:00.071Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.30 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.36 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1701.61,
+      "exitTime": "2026-07-02T15:42:00.046Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.11516755123578173,
+      "pnlPercent": 0.058733356435120204
+    },
+    {
+      "id": "1783007099941",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1702.07,
+      "quantity": 0.11520544264370976,
+      "positionSize": 196.08772776057907,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:44:59.941Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.20 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.68 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1701.78,
+      "exitTime": "2026-07-02T15:47:00.220Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.03340957836667164,
+      "pnlPercent": 0.01703807716486182
+    },
+    {
+      "id": "1783007279848",
+      "symbol": "ETHUSDT",
+      "type": "SHORT",
+      "entryPrice": 1702.23,
+      "quantity": 0.11519500652211885,
+      "positionSize": 196.08839595214639,
+      "stopLoss": 1722.94902,
+      "takeProfit": 1702,
+      "entryTime": "2026-07-02T15:47:59.848Z",
+      "confidence": "MEDIUM",
+      "signals": [
+        {
+          "indicator": "RSI",
+          "signal": "BEARISH",
+          "reason": "RSI 74.23 - Overbought"
+        },
+        {
+          "indicator": "EMA",
+          "signal": "BULLISH",
+          "reason": "Price above EMA20 & EMA50 (uptrend)"
+        },
+        {
+          "indicator": "BB",
+          "signal": "BEARISH",
+          "reason": "Price above upper Bollinger Band"
+        },
+        {
+          "indicator": "MACD",
+          "signal": "BULLISH",
+          "reason": "MACD line positive"
+        },
+        {
+          "indicator": "OrderBook",
+          "signal": "BEARISH",
+          "reason": "Bid/Ask ratio 0.56 - More sellers"
+        }
+      ],
+      "status": "CLOSED",
+      "exitPrice": 1701.19,
+      "exitTime": "2026-07-02T15:49:00.619Z",
+      "closeReason": "TAKE_PROFIT",
+      "pnl": 0.11980280678299941,
+      "pnlPercent": 0.06109632658336204
+    }
+  ],
+  "stats": {
+    "totalTrades": 5,
+    "winningTrades": 5,
+    "losingTrades": 0,
+    "totalProfit": 4.61701718773568,
+    "totalLoss": 0,
+    "winRate": 100,
+    "avgProfit": 0.923403437547136,
+    "avgLoss": 0,
+    "largestWin": 3.8708386817143716,
+    "largestLoss": 0,
+    "currentStreak": 5,
+    "bestStreak": 5,
+    "worstStreak": 0
+  },
+  "lastUpdated": "2026-07-02T21:05:06.244Z"
+}

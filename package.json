@@ -1,0 +1,35 @@
+{
+  "name": "crypto-trading-analyzer-enhanced",
+  "version": "3.0.0",
+  "description": "Advanced crypto futures trading analyzer with AI, CoinGlass integration, and 90-95% accuracy signals",
+  "main": "enhanced-server.js",
+  "scripts": {
+    "start": "node enhanced-server.js",
+    "dev": "node enhanced-server.js",
+    "old": "node server.js"
+  },
+  "keywords": [
+    "crypto",
+    "trading",
+    "futures",
+    "analysis",
+    "signals",
+    "binance",
+    "coinglass",
+    "AI",
+    "openrouter",
+    "technical-analysis",
+    "altcoins",
+    "meme-coins"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.2",
+    "node-telegram-bot-api": "^0.64.0",
+    "ws": "^8.21.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

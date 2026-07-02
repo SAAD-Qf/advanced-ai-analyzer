@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crypto Trading Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #333;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .status {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #667eea;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .symbol-card {
+      border-left: 4px solid #667eea;
+    }
+
+    .symbol-card.bullish {
+      border-left-color: #10b981;
+    }
+
+    .symbol-card.bearish {
+      border-left-color: #ef4444;
+    }
+
+    .symbol-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .symbol-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .price-change {
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .price-change.positive {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .price-change.negative {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .signal {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .signal.STRONG_BUY {
+      background: #10b981;
+      color: white;
+    }
+
+    .signal.BUY {
+      background: #34d399;
+      color: white;
+    }
+
+    .signal.HOLD {
+      background: #fbbf24;
+      color: #78350f;
+    }
+
+    .signal.SELL {
+      background: #f87171;
+      color: white;
+    }
+
+    .signal.STRONG_SELL {
+      background: #dc2626;
+      color: white;
+    }
+
+    .confidence {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 8px;
+    }
+
+    .confidence.HIGH {
+      background: #10b981;
+      color: white;
+    }
+
+    .confidence.MEDIUM {
+      background: #fbbf24;
+      color: #78350f;
+    }
+
+    .confidence.LOW {
+      background: #9ca3af;
+      color: white;
+    }
+
+    .indicators {
+      margin: 15px 0;
+    }
+
+    .indicator-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .indicator-item:last-child {
+      border-bottom: none;
+    }
+
+    .indicator-label {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .indicator-value {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .trade-setup {
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+
+    .trade-setup h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #667eea;
+    }
+
+    .trade-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      font-size: 13px;
+    }
+
+    .performance-card {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .performance-card h2 {
+      color: white;
+    }
+
+    .balance {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    .roi {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .stat-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .trades-table {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    .trades-table th {
+      text-align: left;
+      padding: 8px;
+      background: #f3f4f6;
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .trades-table td {
+      padding: 8px;
+      border-bottom: 1px solid #f3f4f6;
+      font-size: 13px;
+    }
+
+    .pnl-positive {
+      color: #10b981;
+      font-weight: 600;
+    }
+
+    .pnl-negative {
+      color: #ef4444;
+      font-weight: 600;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 40px;
+      color: #9ca3af;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f4f6;
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 20px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .last-update {
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🚀 Crypto Trading Dashboard</h1>
+      <div class="status">
+        <div class="status-item">
+          <div class="status-dot"></div>
+          <span>Live</span>
+        </div>
+        <div class="status-item">
+          <span id="symbolCount">0 Symbols</span>
+        </div>
+        <div class="status-item">
+          <span id="openPositions">0 Open Positions</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Paper Trading Performance -->
+      <div class="card performance-card">
+        <h2>💰 Paper Trading Performance</h2>
+        <div class="balance" id="balance">$0.00</div>
+        <div class="roi" id="roi">ROI: 0.00%</div>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-label">Total Trades</div>
+            <div class="stat-value" id="totalTrades">0</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Win Rate</div>
+            <div class="stat-value" id="winRate">0%</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Total P&L</div>
+            <div class="stat-value" id="totalPnL">$0</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Current Streak</div>
+            <div class="stat-value" id="streak">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Symbol Cards will be inserted here -->
+    </div>
+
+    <!-- Recent Trades -->
+    <div class="card">
+      <h2>📊 Recent Trades</h2>
+      <div id="tradesContainer">
+        <div class="loading">
+          <div class="spinner"></div>
+          <p>Loading trading data...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="last-update" id="lastUpdate">Waiting for data...</div>
+  </div>
+
+  <script>
+    let ws;
+    let reconnectTimeout;
+
+    function connectWebSocket() {
+      ws = new WebSocket(`ws://${window.location.host}`);
+
+      ws.onopen = () => {
+        console.log('WebSocket connected');
+        clearTimeout(reconnectTimeout);
+      };
+
+      ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+
+        if (data.type === 'analysis') {
+          updateAnalysis(data.data);
+        } else if (data.type === 'performance') {
+          updatePerformance(data.data);
+        } else if (data.type === 'trade') {
+          updateTrades(data.data);
+        }
+
+        updateLastUpdate();
+      };
+
+      ws.onclose = () => {
+        console.log('WebSocket disconnected, reconnecting...');
+        reconnectTimeout = setTimeout(connectWebSocket, 5000);
+      };
+
+      ws.onerror = (error) => {
+        console.error('WebSocket error:', error);
+        ws.close();
+      };
+    }
+
+    function updateAnalysis(analyses) {
+      const grid = document.querySelector('.grid');
+      const performanceCard = grid.querySelector('.performance-card');
+
+      // Remove old symbol cards
+      const oldCards = grid.querySelectorAll('.symbol-card');
+      oldCards.forEach(card => card.remove());
+
+      // Update symbol count
+      document.getElementById('symbolCount').textContent = `${analyses.length} Symbols`;
+
+      // Create new symbol cards
+      analyses.forEach(analysis => {
+        const card = createSymbolCard(analysis);
+        grid.appendChild(card);
+      });
+    }
+
+    function createSymbolCard(data) {
+      const { symbol, analysis, signal, tradeSetup } = data;
+
+      const card = document.createElement('div');
+      card.className = `card symbol-card ${signal.action.includes('BUY') ? 'bullish' : signal.action.includes('SELL') ? 'bearish' : ''}`;
+
+      const priceChangeClass = analysis.priceChange24h >= 0 ? 'positive' : 'negative';
+      const priceChangeSign = analysis.priceChange24h >= 0 ? '+' : '';
+
+      card.innerHTML = `
+        <div class="symbol-header">
+          <div class="symbol-name">${symbol}</div>
+          <div class="price-change ${priceChangeClass}">
+            ${priceChangeSign}${analysis.priceChange24h.toFixed(2)}%
+          </div>
+        </div>
+
+        <div class="price">$${analysis.price.toFixed(4)}</div>
+
+        <div>
+          <span class="signal ${signal.action.replace(' ', '_')}">${signal.action}</span>
+          <span class="confidence ${signal.confidence}">${signal.confidence}</span>
+        </div>
+
+        <div class="indicators">
+          <div class="indicator-item">
+            <span class="indicator-label">RSI</span>
+            <span class="indicator-value">${analysis.rsi.toFixed(2)}</span>
+          </div>
+          <div class="indicator-item">
+            <span class="indicator-label">EMA 20</span>
+            <span class="indicator-value">$${analysis.ema20.toFixed(4)}</span>
+          </div>
+          <div class="indicator-item">
+            <span class="indicator-label">MACD</span>
+            <span class="indicator-value">${analysis.macd.macdLine > 0 ? '📈' : '📉'} ${analysis.macd.macdLine.toFixed(6)}</span>
+          </div>
+          <div class="indicator-item">
+            <span class="indicator-label">Order Book</span>
+            <span class="indicator-value">${analysis.orderBook.pressure}</span>
+          </div>
+        </div>
+
+        ${tradeSetup ? `
+        <div class="trade-setup">
+          <h3>Trade Setup</h3>
+          <div class="trade-item">
+            <span>Entry:</span>
+            <span>$${tradeSetup.entry.toFixed(4)}</span>
+          </div>
+          <div class="trade-item">
+            <span>Stop Loss:</span>
+            <span>$${tradeSetup.stopLoss.toFixed(4)} (${tradeSetup.stopLossPercent.toFixed(2)}%)</span>
+          </div>
+          <div class="trade-item">
+            <span>Take Profit:</span>
+            <span>$${tradeSetup.takeProfit.toFixed(4)} (+${tradeSetup.takeProfitPercent.toFixed(2)}%)</span>
+          </div>
+          <div class="trade-item">
+            <span>Risk/Reward:</span>
+            <span>1:${tradeSetup.riskReward.toFixed(2)}</span>
+          </div>
+        </div>
+        ` : ''}
+      `;
+
+      return card;
+    }
+
+    function updatePerformance(perf) {
+      document.getElementById('balance').textContent = `$${perf.balance.toFixed(2)}`;
+      document.getElementById('roi').textContent = `ROI: ${perf.roi >= 0 ? '+' : ''}${perf.roi.toFixed(2)}%`;
+      document.getElementById('totalTrades').textContent = perf.stats.totalTrades;
+      document.getElementById('winRate').textContent = `${perf.stats.winRate.toFixed(1)}%`;
+      document.getElementById('totalPnL').textContent = `$${(perf.stats.totalProfit - perf.stats.totalLoss).toFixed(2)}`;
+      document.getElementById('streak').textContent = perf.stats.currentStreak;
+      document.getElementById('openPositions').textContent = `${perf.openPositions} Open Positions`;
+    }
+
+    function updateTrades(trades) {
+      const container = document.getElementById('tradesContainer');
+
+      if (!trades || trades.length === 0) {
+        container.innerHTML = '<div class="empty-state">No trades yet</div>';
+        return;
+      }
+
+      const table = document.createElement('table');
+      table.className = 'trades-table';
+      table.innerHTML = `
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Type</th>
+            <th>Entry</th>
+            <th>Exit</th>
+            <th>P&L</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${trades.map(trade => `
+            <tr>
+              <td><strong>${trade.symbol}</strong></td>
+              <td>${trade.type}</td>
+              <td>$${trade.entryPrice.toFixed(4)}</td>
+              <td>$${trade.exitPrice.toFixed(4)}</td>
+              <td class="${trade.pnl >= 0 ? 'pnl-positive' : 'pnl-negative'}">
+                ${trade.pnl >= 0 ? '+' : ''}$${trade.pnl.toFixed(2)} (${trade.pnlPercent.toFixed(2)}%)
+              </td>
+              <td>${new Date(trade.exitTime).toLocaleString()}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      `;
+
+      container.innerHTML = '';
+      container.appendChild(table);
+    }
+
+    function updateLastUpdate() {
+      document.getElementById('lastUpdate').textContent = `Last update: ${new Date().toLocaleString()}`;
+    }
+
+    // Connect on load
+    connectWebSocket();
+  </script>
+</body>
+</html>
